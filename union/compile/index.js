@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // 1-Topshiriq: Primitive turdagi ma’lumotlar
 // Quyidagi o‘zgaruvchilarni yarating va to‘g‘ri tur bilan tiplang:
 // Ismingizni o‘z ichiga olgan o‘zgaruvchi
@@ -13,26 +13,24 @@ id = 101; // OK
 id = 'user_99'; // OK
 // 3-Topshiriq: Funksiya bilan union type
 function printValue(value) {
-    // agar string bo‘lsa katta harfga o‘tkazib chiqaring
-    if (typeof value === 'string') {
-        console.log(value.toUpperCase());
-    }
-    else if (typeof value === 'number') {
-        console.log(value * 2);
-    }
-    // agar number bo‘lsa 2 ga ko‘paytirib chiqaring
+  // agar string bo‘lsa katta harfga o‘tkazib chiqaring
+  if (typeof value === 'string') {
+    console.log(value.toUpperCase());
+  } else if (typeof value === 'number') {
+    console.log(value * 2);
+  }
+  // agar number bo‘lsa 2 ga ko‘paytirib chiqaring
 }
 printValue(12);
 printValue('asadbek');
 //=====================================
 let mixedArray = ['Asadbek', 24, 'developer', 180];
 for (let item of mixedArray) {
-    if (typeof item === 'string') {
-        console.log(`${item} is a string`);
-    }
-    else if (typeof item === 'number') {
-        console.log(`${item} is a number`);
-    }
+  if (typeof item === 'string') {
+    console.log(`${item} is a string`);
+  } else if (typeof item === 'number') {
+    console.log(`${item} is a number`);
+  }
 }
 // ✅ 1-topshiriq: union type bilan foydalanuvchi holati
 // Quyidagi status o‘zgaruvchini yarating va unga "online" yoki "offline" qiymatlaridan birini beriladigan qilib union orqali tip belgilang.
@@ -52,12 +50,11 @@ console.log(statusI);
 // Agar string bo‘lsa, User ID (string): <id> deb chiqarsin.
 // ✅ Misollar:
 function logUserId(value) {
-    if (typeof value === 'string') {
-        console.log('User ID (string): <id> deb chiqarsin.');
-    }
-    else if (typeof value === 'number') {
-        console.log('User ID (number): <id> deb chiqarsin.');
-    }
+  if (typeof value === 'string') {
+    console.log('User ID (string): <id> deb chiqarsin.');
+  } else if (typeof value === 'number') {
+    console.log('User ID (number): <id> deb chiqarsin.');
+  }
 }
 logUserId(101); // User ID (number): 101
 logUserId('user_99'); // User ID (string): user_99
@@ -71,31 +68,26 @@ logUserId('user_99'); // User ID (string): user_99
 // Agar string bo‘lsa, uni katta harfga o‘tkazib chiqaring.
 let arr = ['hello', 1, 'user', 2];
 arr.forEach((item) => {
-    if (typeof item === 'string') {
-        console.log(item.toUpperCase());
-    }
-    else if (typeof item === 'number') {
-        console.log(10 * item);
-    }
+  if (typeof item === 'string') {
+    console.log(item.toUpperCase());
+  } else if (typeof item === 'number') {
+    console.log(10 * item);
+  }
 });
-deb;
-union;
-tur;
-yarating.
-;
+
 // 3 ta User yarating: biri "admin", biri "user", biri "guest" rolida.
 // Har bir foydalanuvchini console.log bilan chiqaring.
 let user1 = {
-    username: 'asadbek',
-    role: "admin"
+  username: 'asadbek',
+  role: 'admin',
 };
 let user2 = {
-    username: 'Inomjon',
-    role: "user"
+  username: 'Inomjon',
+  role: 'user',
 };
 let user3 = {
-    username: 'Doston',
-    role: "guest"
+  username: 'Doston',
+  role: 'guest',
 };
 //================================
 // Funksiya orqali User rollarini tekshirish
@@ -106,28 +98,26 @@ let user3 = {
 // "user" bo‘lsa: "Limited access" chiqarsin.
 // "guest" bo‘lsa: "Read-only access" chiqarsin.
 function checkPermission(value) {
-    if (value.role === 'admin')
-        console.log("Full access");
-    else if (value.role === 'user')
-        console.log("Limited access");
-    else if (value.role === 'guest')
-        console.log("Read-only access");
+  if (value.role === 'admin') console.log('Full access');
+  else if (value.role === 'user') console.log('Limited access');
+  else if (value.role === 'guest') console.log('Read-only access');
 }
 checkPermission(user1); // Full access
 checkPermission(user3); // Read-only access
 function describeShape(value) {
-    switch (value) {
-        case 'circle':
-            console.log("It's a circle");
-            break;
-        case 'circle':
-            console.log("It's a square");
-            break;
-        case 'circle':
-            console.log("It's a triangle");
-            break;
-    }
+  switch (value) {
+    case 'circle':
+      console.log("It's a circle");
+      break;
+    case 'circle':
+      console.log("It's a square");
+      break;
+    case 'circle':
+      console.log("It's a triangle");
+      break;
+  }
 }
-describeShape("circle"); // It's a circle
-describeShape("square"); // It's a square
-describeShape("triangle"); // It's a triangle
+describeShape('circle'); // It's a circle
+describeShape('square'); // It's a square
+describeShape('triangle'); // It's a triangle
+// ================================

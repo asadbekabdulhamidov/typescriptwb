@@ -110,10 +110,9 @@ arr.forEach((item) => {
 // union type bilan object yozish
 // 🧩 Talab:
 
-type UserRole = "admin" | "user" | "guest" deb union tur yarating.
+type UserRole = 'admin' | 'user' | 'guest';
 
 // User nomli type yarating:
-
 
 type User = {
   username: string;
@@ -123,22 +122,18 @@ type User = {
 
 // Har bir foydalanuvchini console.log bilan chiqaring.
 
-let user1:User={
-    username:'asadbek',
-    role:"admin"
-
-}
-let user2:User={
-    username:'Inomjon',
-    role:"user"
-
-}
-let user3:User={
-    username:'Doston',
-    role:"guest"
-
-}
-
+let user1: User = {
+  username: 'asadbek',
+  role: 'admin',
+};
+let user2: User = {
+  username: 'Inomjon',
+  role: 'user',
+};
+let user3: User = {
+  username: 'Doston',
+  role: 'guest',
+};
 
 //================================
 // Funksiya orqali User rollarini tekshirish
@@ -154,14 +149,11 @@ let user3:User={
 
 // "guest" bo‘lsa: "Read-only access" chiqarsin.
 
-function checkPermission(value:User):void{
-    if(value.role==='admin')console.log("Full access");
-    else if(value.role==='user')console.log("Limited access");
-    else if(value.role==='guest')console.log("Read-only access");
-
+function checkPermission(value: User): void {
+  if (value.role === 'admin') console.log('Full access');
+  else if (value.role === 'user') console.log('Limited access');
+  else if (value.role === 'guest') console.log('Read-only access');
 }
-
-
 
 checkPermission(user1); // Full access
 checkPermission(user3); // Read-only access
@@ -177,24 +169,33 @@ checkPermission(user3); // Read-only access
 
 // Har bir tur uchun alohida xabar chiqarsin:
 
-type Shape = "circle" | "square" | "triangle"
-function describeShape(value:Shape):void{
-    switch (value){
-        case'circle':
-        console.log("It's a circle");
-        break
-        case'circle':
-        
-        console.log("It's a square");
-        break
-        case'circle':
-        console.log("It's a triangle");
-        break
-
-}
+type Shape = 'circle' | 'square' | 'triangle';
+function describeShape(value: Shape): void {
+  switch (value) {
+    case 'circle':
+      console.log("It's a circle");
+      break;
+    case 'circle':
+      console.log("It's a square");
+      break;
+    case 'circle':
+      console.log("It's a triangle");
+      break;
+  }
 }
 
+describeShape('circle'); // It's a circle
+describeShape('square'); // It's a square
+describeShape('triangle'); // It's a triangle
 
-describeShape("circle");    // It's a circle
-describeShape("square");    // It's a square
-describeShape("triangle");  // It's a triangle
+// ================================
+function login(username: string | number): void {
+  if (typeof username == 'string') {
+    console.log(`Logging in user: <${username}>`);
+  } else if (typeof username == 'number') {
+    console.log(`Logging in user ID: <${username}> `);
+  }
+}
+
+login('asadbek'); // Logging in user: asadbek
+login(1001); // Logging in user ID: 1001
